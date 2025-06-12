@@ -28,4 +28,4 @@ jobs:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: |
           cd server
-          python birthday_mailer.py
+          python main.py

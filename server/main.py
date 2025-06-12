@@ -25,11 +25,11 @@ app.add_middleware(
 )
 
 # Load HTML template
-with open("birthday_template.html", "r", encoding="utf-8") as f:
-    email_template = Template(f.read())
+# Email credentials from env
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
 
-# Configure Email
-yag = yagmail.SMTP(user="vaibhavchauhan658@gmail.com", password="iqxq jpyz qmhx npzz")
+yag = yagmail.SMTP(user=EMAIL_USER, password=EMAIL_PASS)
 
 # Birthday mail logic
 def send_birthday_emails():
@@ -72,4 +72,3 @@ def upload_excel(file: UploadFile = File(...)):
 @app.get("/")
 def home():
     return {"message": "🎂 Birthday Mailer Running"}
-    
