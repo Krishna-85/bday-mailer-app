@@ -1,0 +1,4 @@
+pandas
+yagmail
+jinja2
+openpyxl
