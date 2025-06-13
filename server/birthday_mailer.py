@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 import pandas as pd
 from datetime import datetime
 import yagmail

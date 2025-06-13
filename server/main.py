@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
+import uvicorn
 
 app = FastAPI()
 
@@ -21,3 +22,9 @@ async def upload_excel(file: UploadFile = File(...)):
     with open(file_location, "wb") as f:
         shutil.copyfileobj(file.file, f)
     return {"message": "File uploaded successfully!"}
+
+# 👇 Run this with: python server/main.py
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)  # No reload
+
