@@ -8,6 +8,7 @@ on:
 jobs:
   run-birthday-script:
     runs-on: ubuntu-latest
+    environment: email-sender # 🟡 <-- Use the exact name of your environment here
 
     steps:
       - name: Checkout code
