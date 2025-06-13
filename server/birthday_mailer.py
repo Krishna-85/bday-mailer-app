@@ -1,8 +1,8 @@
 import pandas as pd
 from datetime import datetime
 import yagmail
-from jinja2 import Template
 import os
+from jinja2 import Template
 
 EXCEL_PATH = "server/uploads/employees.xlsx"
 TEMPLATE_PATH = "server/templates/birthday_template.html"
